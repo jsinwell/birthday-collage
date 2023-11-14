@@ -1,10 +1,20 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import AliceCarousel from 'react-alice-carousel';
 import 'react-alice-carousel/lib/alice-carousel.css';
 import './ImageCollage.css';
 
 function ImageCollage() {
     const handleDragStart = (e) => e.preventDefault();
+
+    useEffect(() => {
+        // Trigger a resize event after a slight delay
+        const timer = setTimeout(() => {
+            window.dispatchEvent(new Event('resize'));
+        }, 100);
+
+        // Clean up the timer when the component is unmounted
+        return () => clearTimeout(timer);
+    }, []);
 
     const items = [
         <img className="carousel-img" src={process.env.PUBLIC_URL + '/IMG_0151.jpeg'} onDragStart={handleDragStart} role="presentation" />,
@@ -49,14 +59,12 @@ function ImageCollage() {
         <img className="carousel-img" src={process.env.PUBLIC_URL + '/IMG_4654.jpeg'} onDragStart={handleDragStart} role="presentation" />,
         <img className="carousel-img" src={process.env.PUBLIC_URL + '/IMG_7215.jpg'} onDragStart={handleDragStart} role="presentation" />,
 
-
+            
     ];
-    
 
     return (
         <AliceCarousel
         autoWidth
-        autoHeight={false}
         mouseTracking
         items={items}
         responsive={{

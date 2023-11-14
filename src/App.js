@@ -28,11 +28,11 @@ function App() {
   );
 
   return (
-    <Router>
+    <Router >
       <div className="App">
         <NavBar />
         <Routes>
-          <Route path="/home" element={<Home />} />
+          <Route path="/birthday-collage" element={<Home />} />
           <Route path="/adventure" element={<AdventurePage />} />
         </Routes>
       </div>
