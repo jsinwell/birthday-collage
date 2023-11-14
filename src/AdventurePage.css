@@ -1,0 +1,35 @@
+.adventure-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; 
+    text-align: center;
+    padding: 20px; 
+    background-color: black;
+}
+
+.start-button, .options-container button {
+    background-color: gray; /* a vibrant orange, but choose any color you like */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-top: 20px; /* Adjust the margin as needed to place the button below the text */
+    transition: background-color 0.3s ease; /* Adds a transition effect when hovering over the button */
+}
+
+.start-button:hover, .options-container button:hover {
+    background-color: darkgray; /* a slightly darker orange for the hover state */
+}
+
+.options-container {
+    display: flex;
+    flex-direction: column; /* Stack the buttons vertically */
+    align-items: center; /* Center the buttons horizontally */
+    gap: 10px; /* Adds space between buttons if you have more than one */
+}
+
+

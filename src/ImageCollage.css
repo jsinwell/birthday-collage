@@ -1,0 +1,5 @@
+.carousel-img {
+    height: 300px; /* Consistent height for all images */
+    object-fit: cover; /* Cover the area, may crop images */
+    margin-right: 10px; /* Space between items */
+}
